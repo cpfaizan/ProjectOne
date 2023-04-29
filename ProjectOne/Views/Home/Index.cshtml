@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Log in";
+    Layout = "_Layoutnav";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+   
+</head>
+<body>
+    <a style="position:absolute; margin-left:90% " class="btn btn-outline-danger" asp-controller="Logger"> Logout </a>
+    <div style="text-align:center; margin-top:50px;">
+        
+        <h1 style="color:green">Welcome</h1>
+        
+        <label>Redirect Your self to:</label>
+        <br>
+        <a class="btn btn-outline-primary" asp-controller="Student"> Students </a>
+        <br>
+        <a class="btn btn-outline-warning" asp-controller="Department"> Department </a>
+        <br>
+        <a class="btn btn-outline-danger" asp-controller="Course"> Course </a>
+        <br>
+        
+       @* <button onclick="showInPopup('@Url.Action("Create","UserDetail",null,Context.Request.Scheme)','Create')" class="btn  btn-outline-info "><i class="fa-solid fa-pen-to-square fa-fade" style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.6;"></i> Create New Account </button>*@
+    <br>
+    </div>
+
+</body>
+</html>

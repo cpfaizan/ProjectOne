@@ -1,0 +1,88 @@
+﻿@model IEnumerable<ProjectOne.Models.Logger>
+
+@{
+    ViewData["Title"] = "Log in";
+    Layout = "_Layoutnav";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+   
+</head>
+<body>
+    <div style="text-align:center; margin-top:50px;">
+    <form asp-action="Login">
+
+        <h1 style="color:green">Login</h1>
+        <label>Name</label>
+        <br>
+        <input placeholder="Mail" type="email" id="Mail" name="Mail" required/>
+        <br>
+
+        <br>
+        <label>Password</label>
+        <br>
+        <input type="password" placeholder="Pass" id="Pass" name="Pass" required />
+        <br>
+       
+        <br>
+        <button class="btn  btn-outline-success"; type="submit">Login</button>
+        <br>
+        @*<button onclick="showInPopup('@Url.Action("Create","UserDetail",null,Context.Request.Scheme)','Create')" class="btn  btn-outline-info "><i class="fa-solid fa-pen-to-square fa-fade" style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.6;"></i> Create New Account </button>*@
+    <br>
+    <br>
+        @if (ViewData["ValidateMessage"] != null)
+        {
+            <Label>@ViewData["ValidateMessage"]</label>
+        }
+        
+
+    </form>
+    </div>
+
+</body>
+</html>
+
+
+
+@*
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Mail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pass)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pass)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+*@
